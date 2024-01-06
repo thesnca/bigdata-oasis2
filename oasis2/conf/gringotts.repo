@@ -1,0 +1,5 @@
+[gringotts]
+name=gringotts rpm repository
+baseurl=http://ks3-cn-shanghai-2.yanfa.two.com/galaxy-cloud-bigdata-resource/gringotts/repo/centos7/default/
+enabled=1
+gpgcheck=0

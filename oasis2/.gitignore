@@ -1,0 +1,6 @@
+/test/
+/logs/*
+*__pycache__*
+.idea/
+.vscode/settings.json
+.DS_Store

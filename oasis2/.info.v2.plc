@@ -1,0 +1,75 @@
+{
+  "code_source": {
+    "type": "git",
+    "git": "git@newgit.op.ksyun.com:cloud-bigdata/oasis-optimization.git",
+    "ref_object": "galaxy_oasis_kes_20230601",
+    "author": "w_hongzhixuan@kingsoft.com",
+    "commit_hash": "a7309162f546105d19b872a909adb0197234e0eb",
+    "commit_date": "Thu Jun 1 10:43:53 2023 +0800"
+  },
+  "labels": {
+    "app.product": "KMR",
+    "app.type": "kmr"
+  },
+  "module": "oasis2",
+  "ports": [],
+  "domain": [],
+  "build": {
+    "environment": {},
+    "build_command": {
+      "command": null,
+      "finally_command": null,
+      "post_command": null,
+      "init": null,
+      "work_dir": null,
+      "executor": {},
+      "environment": {},
+      "pre_command": null,
+      "environment_command": "LANG=zh_CN.utf8;source /etc/profile;[ -f /root/.nvm/nvm.sh ] && source /root/.nvm/nvm.sh; source \"/root/.sdkman/bin/sdkman-init.sh\"; export PATH;"
+    },
+    "replace_files": [
+      "./conf/gringotts.repo",
+      "./conf/oasis2_galaxy_prod.ini"
+    ],
+    "replace_config": [],
+    "build_time": "2023-06-01T11:56:45.836627",
+    "attach_packages": {
+      ".": "."
+    },
+    "runtime": null
+  },
+  "deploy": {
+    "environment": {},
+    "deploy_command": {
+      "command": "source /etc/profile && set -m && export OASIS_REGION=galaxy;export OASIS_ENV=PROD && cd scripts;sh restart.sh",
+      "finally_command": null,
+      "post_command": null,
+      "init": null,
+      "work_dir": null,
+      "executor": {},
+      "environment": {},
+      "clean": false
+    },
+    "stop_command": null,
+    "step": 0,
+    "deploy_order": 0,
+    "health_check_command": null,
+    "require": [],
+    "deploy_dest": "/data/projects/oasis2",
+    "static_resource": [],
+    "vm_list": [
+      {
+        "fix_ip": "10.65.10.162",
+        "connect_ip": null,
+        "labels": {}
+      },
+      {
+        "fix_ip": "10.65.10.33",
+        "connect_ip": null,
+        "labels": {}
+      }
+    ],
+    "runtime": null
+  },
+  "disabled": false
+}

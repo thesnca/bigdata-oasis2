@@ -1,0 +1,183 @@
+# galaxy conf can not null
+# ============== OASIS ==============
+[oasis]
+test_env = false
+cache_expire = 86400
+
+[kmr]
+version = v2
+host = 127.0.0.1
+port = 28080
+log_name = kmr
+# log_path =
+# log_format =
+
+[kes]
+version = v1
+host = 0.0.0.0
+port = 28081
+log_name = kes
+# log_path =
+# log_format =
+
+[khbase]
+version = v1
+host = 0.0.0.0
+port = 28082
+log_name = khbase
+# log_path =
+# log_format =
+
+[kafka]
+version = v2
+host = 0.0.0.0
+port = 28083
+log_name = kafka
+# log_path =
+# log_format =
+
+[worker]
+stream = stream_worker
+group = group_worker_01
+timeout = 3600
+concurrent = 5
+lock_timeout = 30
+log_name = worker
+# log_path =
+# log_format =
+
+[manager]
+interval = 5
+stream = stream_worker
+manager_lock = /oasis/manager_lock/kes
+log_name = manager
+# log_path =
+# log_format =
+
+# ============== DB ==============
+[mysql]
+host = db.poc.sdns.yunyan.com
+port = 3306
+username = oasis
+password = LBzvzLGqau9ysnbI
+db = oasis_new_galaxy
+max_pool_size = 20
+
+[redis]
+host = 10.0.5.18
+port = 6379
+password = ''
+maxsize = 20
+encoding = utf8
+
+# ============== Kingsoft ==============
+[ksc]
+khbase = f6082952-0db9-41aa-ac6e-e8a08e02d013
+kes = efca6182-93fa-11ea-8427-e8611f1450d8
+
+[iam]
+iam_uri = http://iam.inner.sdns.yunyan.com/
+iam_proxy_uri = http://proxy.inner.sdns.yunyan.com/
+iam_project_endpoint = http://iam.inner.api.yunyan.com/
+iam_project_version = 2015-11-01
+kes_ak = AKLTR4TICObkQ2igPOM5q-5wPg
+kes_sk = ODvrzO2eWbtIazz4q6Z9TngA2h5y0VNe0rZnYKPmTDOIJJjNK0fCdgT4dXltRt6CaQ==
+khbase_ak = AKLTO0hHOThPSm6Hh3Yj0Zp3Fw
+khbase_sk = OCoP2uXewNWFVDnQutR1g1nNtTmZbkrfwKQmZqd5COR/RJMFgVSkmO7xwUJe+lxylw==
+
+[charge]
+charge_uri = http://tradeapi.inner.sdns.yunyan.com
+price_uri = http://newprice.inner.sdns.yunyan.com
+product_uri = http://productapi.inner.sdns.yunyan.com
+instance_uri = http://instance.inner.sdns.yunyan.com
+eip_product_uri = http://network.inner.sdns.yunyan.com
+ebs_product_uri = http://ebs.inner.sdns.yunyan.com
+kec_product_uri = http://ecs.inner.sdns.yunyan.com
+epc_product_uri = http://epc.cn-shanghai-2.inner.yunyan.com
+
+[infra]
+region = cn-shanghai-2
+vpc_endpoint = http://vpc.inner.api.yunyan.com
+vpc_version = 2016-03-04
+neutron_endpoint = http://neutron.galaxy.cloud:9696/v2.0/
+ebs_endpoint = http://ebs.inner.sdns.yunyan.com/
+eip_endpoint = http://eip.inner.api.yunyan.com/
+eip_version = 2016-03-04
+slb_endpoint = http://slb.inner.api.yunyan.com/
+slb_version = 2016-03-04
+kec_endpoint = http://ecs.inner.sdns.yunyan.com/
+kec_version = 2016-03-04
+epc_endpoint = http://epc.cn-shanghai-2.inner.yunyan.com/
+epc_version = 2015-11-01
+sks_endpoint = http://sks.inner.sdns.yunyan.com
+sks_version = 2015-11-01
+ks3_endpoint = ks3-cn-shanghai-2.yunyan.com
+ks3_region = CN-SHANGHAI-2
+tagv2_endpoint = http://tagv2.inner.api.yunyan.com/
+tagv2_version = 2020-09-01
+
+[vpc]
+hue_listen_ports = 28290
+nginx_listen_ports = 28291
+control_port_start = 1500
+control_port_end = 1599
+dns1 = 198.18.254.60
+dns2 = 198.18.254.61
+ssh_port = 1505
+pub_zone_subnet = 100.71.10.0
+pub_zone_mask = 24
+bind_vif_nums_once = 15
+
+[quota]
+using_remote_quota_service = false
+quota_uri = http://quota.inner.yunyan.com
+user_lock_pool_size = 256
+region = cn-shanghai-2
+cpu_quota_id = 16
+mem_quota_id = 17
+disk_quota_id = 18
+need_sync_to_remote = false
+need_sync_from_remote = false
+
+[gringotts]
+gringotts_env = galaxy
+gringotts_url = http://gringotts.kmr.sdns.yunyan.com/gringotts/v1/
+gringotts_monitor_url = http://gringotts.queryapi.sdns.yunyan.com/gringotts/v1/
+gringotts_repo_url_prefix = http://ks3-cn-shanghai-2-internal.yunyan.com/galaxy-cloud-bigdata-resource/
+url_overdue_seconds = 86400
+
+[eagles]
+enable = true
+eagles_uri = http://monitor.console.sdns.ksyun.com:8080
+alerts_uri = http://uic.monitor.sdns.ksyun.com:8081
+region = cn-shanghai-2
+product_type = 5
+# warnings =
+critics = datanode_storage:0, datanode_process_percent:1, namenode_ha_health:2, journalnode_process_percent:3, yarn_nodemanager_webui_percent:4, hbase_regionserver_process_percent:5, zookeeper_server_process_percent:6, hive_metastore_process:7
+
+[feishu]
+enable = false
+feishu_url = http://alarm.inner.sdns.yunyan.com/alarm/receptor
+
+[cubrick]
+enable_notification = false
+
+[ssh_remote]
+sleep_sec = 20
+retry = 1
+
+[image_id]
+khbase-1.0.0 = d63de3bd-6772-4f91-b3f2-2a77f4ab60b5
+kes-1.0.0 = 31e9083a-6ef2-47a9-aa1f-a11664256437
+epc-kmr-4.0.0 = prt80e9eddd-f224-40cd-b12d-abb1e85c7e7d
+epc-kes-1.0.0 = 0b11b872-d8e6-11e8-803a-e8611f1450d8
+
+[network_id]
+kes = b6d8767b-4ce3-45a2-9960-8a1ccf34e953
+
+[kes_user_plugin]
+ak = AKLTKnBCVgZsQwOn9vJ4n_Qm1g
+sk = OEeCCH0N+XSRyIn+I5MEa+Kou92ie6r2LGe10sIxCeB0F6qXuEsbWUGg9QJXHIIyUg==
+ks3_public_endpoint = ks3-cn-shanghai-2.yunyan.com
+bucket_name = galaxy-cloud-bigdata-resource
+plugin_path = user-plugin

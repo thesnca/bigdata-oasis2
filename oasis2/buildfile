@@ -1,0 +1,4 @@
+build=""
+package=""
+destpath="/data/projects/oasis2"
+runService= "source /etc/profile && set -m && export OASIS_REGION=galaxy;export OASIS_ENV=PROD && cd scripts;sh restart.sh"
