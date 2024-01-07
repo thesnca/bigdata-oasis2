@@ -16,3 +16,6 @@ class ClusterOrderModel(OasisBase):
     instance_group_id = Column(String(36), nullable=False)
     instance_id = Column(String(36), nullable=False, primary_key=True)
     data = Column(JSON)
+
+
+
